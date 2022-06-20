@@ -1,0 +1,37 @@
+ALGORITHM Sentence_Test
+VAR
+// declaration
+    i : INTEGER :=0 ;
+    stc : STRING := '';
+    nb_car : INTEGER:= 0 ;
+    nb_wrd : INTEGER :=0;
+    nb_vl : INTEGER :=0;
+
+
+    BEGIN
+// input 
+    write("write a sentence :");
+    read(stc);
+
+//calculate the number of caracters
+    WHILE (stc[i] <> '.') DO  
+        nb_car := nb_car +1;
+
+//calculate the number of vowels
+        IF (stc[i] = 'a' OR stc[i]='i' OR stc[i]='e' OR stc[i]='o' OR stc[i]='u') 
+        THEN
+            nb_vl := nb_vl +1;
+        END_IF
+
+//calculate the number of words
+        IF (stc[i]=' ') THEN
+            nb_wrd := nb_wrd +1;
+        END_IF
+        i:=i+1;
+    END_WHILE
+
+// output
+    Write("Lenght of sentence :",nb_car);
+    Write("Number of words :",nb_wrd);
+    Write("Number of vowels : ",nb_vl);
+END
